@@ -9,9 +9,9 @@
     class Conexao {
 
     const HOST      = "localhost";
-    const NOMEBANCO = "3INFO3";
-    const USUARIO   = "3INFO3";
-    const SENHA     = "3INFO3";
+    const NOMEBANCO = "3info";
+    const USUARIO   = "3info";
+    const SENHA     = "Ajm97255264";
 
 
     //!!!Substitua daqui para baixo

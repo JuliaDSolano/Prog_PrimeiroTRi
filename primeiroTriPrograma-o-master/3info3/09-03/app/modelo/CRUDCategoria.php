@@ -25,7 +25,7 @@ class CRUDCategoria
             $id = $categoria['id_categoria'];
             $nome = $categoria['nome_categoria'];
             $descricao = $categoria['descricao_categoria'];
-            $lista_Categoria[] = new Categoria($categorias);
+            $lista_Categoria[] = new Categoria($id, $nome, $categorias);
         return $categorias;
     }
 

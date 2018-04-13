@@ -18,7 +18,7 @@ class Categoria
     private $nome;
     private $descricao;
 
-    public function __construct($nome, $descricao, $id = null)
+    public function __construct($id = null, $nome, $descricao)
     {
         $this->id = $id;
         $this->nome = $nome;
