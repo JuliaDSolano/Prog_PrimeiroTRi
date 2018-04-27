@@ -1,0 +1,20 @@
+.horizontal-menu {
+    width: 200px;
+}
+
+.horizontal-menu a {
+    color: hotpink;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.horizontal-menu a:hover {
+    background-color: pink;
+}
+
+.horizontal-menu {
+    width: 600px;
+    height: 300px;
+    overflow-y: auto;
+}
