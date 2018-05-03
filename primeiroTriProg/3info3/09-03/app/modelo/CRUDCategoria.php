@@ -59,11 +59,12 @@ class CRUDCategoria
 
         //recebe um inteiro e apaga o registro correspondente no BD
         $this->conexao = Conexao::getConexao();
-
-        $sql = "UPDATE categoria set Nome_Categoria = 'MOVEIS', descricao_categoria['MOVEIS']   where id_categoria = $categoria->getCategoria  ";
+        $sql = "update categoria set nome_categoria = '".$categoria->getNome()."', descricao_categoria = '".$categoria->getDescricao()."' where id_categoria = ".$categoria->getId();
         try{
-            $this->conexao->exec($sql);
+           $res = $this->conexao->exec($sql);
+            return $res;
         }catch (PDOException $e ){
+            echo $e->getMessage();
             return $e->getMessage();
         }
     }

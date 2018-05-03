@@ -1,20 +1,27 @@
 
 <html>
-    <link href="../css/style.css">
+
 
 <head>
+    <link href="../css/style.css" rel="stylesheet">
     <title>Categorias</title>
-    <link rel="stylesheet" a href=" ">
 
     <!--   <base href=""> onde esta meu arquivo -->
-</head>
+    </head>
+    <body>
 
-<body>
+   <!--  <nav id="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="../../controlers/categorias.php">Produtos</a></li>
+        </ul>
+    </nav> -->
 
 
 
+    </body>
 
-</body>
+<link href="rodape.php"/>
 
 
 

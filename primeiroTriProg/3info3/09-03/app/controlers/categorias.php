@@ -45,37 +45,51 @@ switch ($acao){
             $nome = $_POST['nome'];
             $descricao = $_POST['descricao'];
 
-            $novaCat = new Categoria(null, $nome, $descricao);
+            $novaCat = new Categoria(null,$nome, $descricao);
             $crud = new CRUDCategoria();
             $crud->insertCategoria($novaCat);
 
             header('Location: categorias.php');
         }
+        break;
 
     case 'alterar';
+
+        $crud = new CrudCategoria();
 
         if (!isset($_POST['gravar'])) {
 
             $id = $_GET;
-            include '../views/templates/cabecalho.php';
-            include '../views/categorias/alterar.php';
-            include '../views/templates/rodape.php';
-
-        }else{ //gravar dados no bd
-
             $nome = $_POST['nome'];
             $descricao = $_POST['descricao'];
-
-            $novaCat = new Categoria(null, $nome, $descricao);
-            $crud = new CRUDCategoria();
-            $crud->insertCategoria($novaCat);
-
+            $novaCat = new Categoria($id, $nome, $descricao);
+            $res = $crud->updateCategoria($novaCat);
             header('Location: categorias.php');
+
+        }else{ //gravar dados no bd
+            $res = $crud->getCategoria($_GET['id']);
+            include '../views/categorias/alterar.php';
         }
+        break;
+
+        case 'excluir';
+
+            $id =$_GET['id'];
+            include '../views/templates/cabecalho.php';
+            include '../views/categorias/excluir.php';
+            include '../views/templates/rodape.php';
+
+            $deleta = mysql_query ("DELETE FROM categoria WHERE id = '$id_categoria'");
+
+            if ($deleta ==''){
+                echo "Erro ao deletar";
+            }else{
+                echo "Categoria excluída com sucesso!";
+            }
 
 
     default; //caso não seja nenhum dos anteriores
-        echo 'Ação inválida';
+
 }
 
 
